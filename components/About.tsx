@@ -45,7 +45,7 @@ const About = forwardRef<HTMLElement, AboutProps>(({ onStatClick }, ref) => {
             <div className="container mx-auto px-6">
                 <div className="flex flex-col md:flex-row items-center justify-center gap-12 md:gap-20">
                     <div className="md:w-1/3 lg:w-1/4 flex-shrink-0">
-                         <div className="relative group rounded-lg shadow-2xl mx-auto w-64 h-64 md:w-72 md:h-72 lg:w-80 lg:h-80 border-8 border-[var(--color-surface)] ring-4 ring-[var(--color-primary)] transition-all duration-500 ease-in-out hover:ring-offset-4 hover:ring-offset-[var(--color-background)] hover:shadow-[0_0_45px_var(--color-primary)]/50 overflow-hidden">
+                         <div className="relative group rounded-lg shadow-2xl mx-auto w-64 h-64 md:w-80 md:h-80 border-8 border-[var(--color-surface)] ring-4 ring-[var(--color-primary)] transition-all duration-500 ease-in-out hover:ring-offset-4 hover:ring-offset-[var(--color-background)] hover:shadow-[0_0_45px_var(--color-primary)]/50 overflow-hidden">
                             <GoldenDustCanvas />
                             <img 
                                 src="./image.png"
