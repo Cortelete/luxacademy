@@ -1,4 +1,5 @@
 
+
 import React, { useRef, useEffect, useMemo, useState } from 'react';
 import { SectionRefs, Course, InfoModalData } from './types';
 import Header from './components/Header';
@@ -110,6 +111,8 @@ const FloatingMenuButton = ({ onClick }: { onClick: () => void }) => (
 
 const featureCategories = {
   'Plano Profissional': [
+    '2 Dias de Curso Intensivo',
+    'Kit de Material Inicial Incluso',
     'Aplicação dos cílios', 'Manutenção dos cílios', 'Remoção dos cílios', 'Saúde Ocular', 'Higienização Geral', 'Materiais necessários', 'Cola',
   ],
   'Plano Empreendedora': [

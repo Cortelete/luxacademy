@@ -1,4 +1,5 @@
 
+
 import React, { forwardRef, useState } from 'react';
 import { Course } from '../types';
 import CourseCard from './CourseCard';
@@ -67,6 +68,9 @@ const Courses = forwardRef<HTMLElement, CoursesProps>(({ courses, featureCategor
            </div>
           <h2 className="text-4xl md:text-5xl font-playfair font-bold text-[var(--color-primary)] uppercase" style={{textShadow: '0 2px 8px var(--color-primary)/40'}}>NOSSOS CURSOS</h2>
           <p className="text-lg text-[var(--color-text-subtle)] mt-4">Escolha o plano ideal para transformar a sua carreira.</p>
+          <p className="text-md font-semibold text-[var(--color-primary)] mt-4 tracking-wider">
+              Todos os cursos incluem 2 dias de imersão e kit de material inicial.
+          </p>
         </div>
         
         <div className="max-w-7xl mx-auto">
