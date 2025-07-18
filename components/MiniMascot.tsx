@@ -56,8 +56,8 @@ const MiniMascot = () => {
     const instagramUrl = "https://www.instagram.com/luxury.joycialmeida/";
     
     const bubbleContainerClasses = {
-        left: "absolute bottom-full mb-2 right-full mr-2 w-max max-w-[200px] p-0.5 rounded-xl shadow-2xl bg-gradient-to-br from-[#EACD8C] to-[#d8b26b] animate-bubble-pop-in-left",
-        right: "absolute bottom-full mb-2 left-full ml-2 w-max max-w-[200px] p-0.5 rounded-xl shadow-2xl bg-gradient-to-br from-[#EACD8C] to-[#d8b26b] animate-bubble-pop-in-right"
+        left: "absolute bottom-full mb-2 right-full mr-2 w-max max-w-[160px] sm:max-w-[200px] p-0.5 rounded-xl shadow-2xl bg-gradient-to-br from-[#EACD8C] to-[#d8b26b] animate-bubble-pop-in-left",
+        right: "absolute bottom-full mb-2 left-full ml-2 w-max max-w-[160px] sm:max-w-[200px] p-0.5 rounded-xl shadow-2xl bg-gradient-to-br from-[#EACD8C] to-[#d8b26b] animate-bubble-pop-in-right"
     };
     
     const bubbleTransformOrigin = {
@@ -72,8 +72,8 @@ const MiniMascot = () => {
                     className={bubbleContainerClasses[bubblePosition]}
                     style={{ transformOrigin: bubbleTransformOrigin[bubblePosition] }}
                 >
-                    <div className="relative bg-gradient-to-br from-[#1e1e1e] to-[#121212] rounded-lg px-3 py-2 text-center">
-                        <p className="text-sm text-white font-medium leading-tight">
+                    <div className="relative bg-gradient-to-br from-[#1e1e1e] to-[#121212] rounded-lg px-2 sm:px-3 py-1 sm:py-2 text-center">
+                        <p className="text-xs sm:text-sm text-white font-medium leading-tight">
                             {bubbleMessage}<br/>
                             <a 
                                 href={instagramUrl}
