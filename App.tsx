@@ -97,7 +97,7 @@ const NavModal = ({ isOpen, onClose, scrollToSection, navLinks }: NavModalProps)
 
 // --- New Floating Menu Button ---
 const FloatingMenuButton = ({ onClick }: { onClick: () => void }) => (
-    <div className="fixed top-6 right-6 z-[55]">
+    <div className="fixed top-6 left-6 z-[55]">
         <button
             onClick={onClick}
             className="relative w-14 h-14 bg-[var(--color-surface)]/90 backdrop-blur-sm rounded-full shadow-lg flex items-center justify-center text-[var(--color-text-strong)] hover:text-[var(--color-primary)] transition-all duration-300 hover:scale-110 animate-fade-in-down"
