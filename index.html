@@ -126,6 +126,14 @@
       .subtle-wink-animation {
         animation: subtle-wink 5s ease-in-out infinite;
       }
+
+      .background-lash-icon {
+        opacity: 0.25; /* Default for dark theme, slightly more transparent */
+        transition: opacity 0.5s ease;
+      }
+      html.light .background-lash-icon {
+        opacity: 0.4; /* More visible for light theme */
+      }
       
       .fade-in-section {
         opacity: 0;

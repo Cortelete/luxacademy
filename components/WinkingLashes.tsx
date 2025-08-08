@@ -123,7 +123,7 @@ const WinkingLashes = () => {
                     className="absolute subtle-wink-animation"
                     style={{...style, animationDuration: `${Math.random() * 3 + 4}s`}}
                 >
-                    <LashIcon className="w-10 h-10 md:w-12 md:h-12 text-[#EACD8C] opacity-[0.3]" />
+                    <LashIcon className="w-10 h-10 md:w-12 md:h-12 text-[var(--color-primary)] background-lash-icon" />
                 </div>
             ))}
         </div>
