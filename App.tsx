@@ -15,9 +15,7 @@ import GlobalMouseGlow from './components/GlobalMouseGlow';
 import InfoModal from './components/InfoModal';
 import Mascot from './components/Mascot';
 import Contact from './components/Contact';
-import AIChat from './components/AIChat';
 import ClickEffect from './components/ClickEffect';
-import AnimatedCursor from './components/AnimatedCursor';
 import { MenuIcon } from './components/icons/MenuIcon';
 
 // --- Inlined Helper Icons for Navigation (to avoid new files) ---
@@ -326,7 +324,6 @@ const App = () => {
     
     return (
         <div className="font-montserrat text-[var(--color-text)]">
-            <AnimatedCursor />
             <ClickEffect />
             <GlobalMouseGlow />
             <div className='relative z-50'>
@@ -351,7 +348,6 @@ const App = () => {
             />
             
             <FloatingWhatsApp />
-            <AIChat courses={coursesData} />
             <Mascot />
             
             <main className="relative z-10">
