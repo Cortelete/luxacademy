@@ -1,6 +1,7 @@
 
 
 
+
 import React, { useRef, useEffect, useMemo, useState } from 'react';
 import { SectionRefs, Course, InfoModalData } from './types';
 import Header from './components/Header';
@@ -72,7 +73,7 @@ const NavModal = ({ isOpen, onClose, scrollToSection, navLinks }: NavModalProps)
                     <button
                         key={link.key}
                         onClick={() => handleNavClick(link.key)}
-                        className="flex flex-col items-center gap-2 text-[var(--color-text)] transition-all duration-300 transform hover:scale-110 hover:text-[var(--color-primary)] group"
+                        className="flex flex-col items-center gap-2 text-[var(--color-text-strong)] transition-all duration-300 transform hover:scale-110 hover:text-[var(--color-primary)] group"
                         style={{ animation: `fadeInUp 0.5s ${index * 0.1}s ease-out forwards`, opacity: 0 }}
                     >
                         <div className="p-4 bg-[var(--color-surface)]/80 rounded-full transition-all duration-300 group-hover:shadow-[0_0_20px_var(--color-primary)]">

@@ -52,7 +52,7 @@ const Header = ({ scrollToSection, onMenuClick, isNavOpen, isScrolled }: HeaderP
                         <button
                             key={link.name}
                             onClick={() => handleNavClick(link.key)}
-                            className="text-[var(--color-text)] hover:text-[var(--color-primary)] transition-colors duration-300 font-medium text-lg"
+                            className="text-[var(--color-text-strong)] hover:text-[var(--color-primary)] transition-colors duration-300 font-medium text-lg"
                         >
                             {link.name}
                         </button>
