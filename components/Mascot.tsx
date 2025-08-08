@@ -1,5 +1,6 @@
 
 
+
 import React, { useState, useEffect, useRef } from 'react';
 
 type Expression = 'neutral' | 'happy'; // Mantido, mas o gatinho terá expressão feliz fixa
@@ -155,17 +156,17 @@ const Mascot: React.FC = () => {
         <div
             ref={mascotRef}
             onClick={handleMascotClick}
-            className="fixed bottom-24 right-6 w-28 h-28 md:w-32 md:h-32 z-[45] cursor-pointer transition-transform duration-300 hover:scale-110 mascot-container"
+            className="fixed bottom-2 left-6 w-28 h-28 md:w-32 md:h-32 z-[45] cursor-pointer transition-transform duration-300 hover:scale-110 mascot-container"
             aria-label="Mascote Interativa Luxy, a assistente virtual"
         >
             {speech && (
-                 <div className="absolute bottom-2/3 right-full mr-4 w-max max-w-[160px] sm:max-w-[220px] p-0.5 rounded-xl shadow-2xl animate-bubble-pop-in-left bg-gradient-to-br from-[var(--color-primary)] to-[#d8b26b]" style={{ transformOrigin: 'bottom right' }}>
+                 <div className="absolute bottom-full mb-4 left-full ml-4 w-max max-w-[160px] sm:max-w-[220px] p-0.5 rounded-xl shadow-2xl animate-bubble-pop-in-right bg-gradient-to-br from-[var(--color-primary)] to-[#d8b26b]" style={{ transformOrigin: 'bottom left' }}>
                     <div className="relative bg-gradient-to-br from-[var(--color-surface)] to-[var(--color-background)] rounded-lg px-3 sm:px-4 py-2 sm:py-3">
                         <strong className="block text-xs sm:text-sm font-bold text-[var(--color-text-strong)] mb-1">Dica da Luxy ✨</strong>
                         <p className="text-[13px] sm:text-[15px] text-[var(--color-primary)] font-medium leading-tight">{speech}</p>
                         {/* Triangle Pointer */}
-                        <div className="absolute top-1/2 -translate-y-1/2 left-full w-0 h-0 
-                                      border-l-[8px] border-l-[var(--color-surface)]
+                        <div className="absolute top-1/2 -translate-y-1/2 right-full w-0 h-0 
+                                      border-r-[8px] border-r-[var(--color-surface)]
                                       border-t-[8px] border-t-transparent
                                       border-b-[8px] border-b-transparent"></div>
                     </div>
@@ -300,7 +301,7 @@ const Mascot: React.FC = () => {
             </svg>
             <style>{`
                 .mascot-container:hover .mascot-svg {
-                    transform: rotate(-5deg) scale(1.05);
+                    transform: rotate(5deg) scale(1.05);
                 }
                 .mascot-svg {
                     transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -346,7 +347,7 @@ const Mascot: React.FC = () => {
                     100% { transform: scale(1) translateY(0); }
                 }
 
-                @keyframes bubble-pop-in-left {
+                @keyframes bubble-pop-in-right {
                     from {
                         opacity: 0;
                         transform: scale(0.5);
@@ -356,8 +357,8 @@ const Mascot: React.FC = () => {
                         transform: scale(1);
                     }
                 }
-                .animate-bubble-pop-in-left {
-                    animation: bubble-pop-in-left 0.4s cubic-bezier(0.18, 0.89, 0.32, 1.28) forwards;
+                .animate-bubble-pop-in-right {
+                    animation: bubble-pop-in-right 0.4s cubic-bezier(0.18, 0.89, 0.32, 1.28) forwards;
                 }
 
                 /* Blink animation for eyelids */
