@@ -44,11 +44,11 @@ const About = forwardRef<HTMLElement, AboutProps>(({ onStatClick }, ref) => {
     };
 
     return (
-        <section ref={ref} id="sobre" className="py-20 md:py-32 bg-[var(--color-surface)]/85 fade-in-section">
+        <section ref={ref} id="sobre" className="py-16 sm:py-20 bg-[var(--color-surface)]/85 fade-in-section">
             <div className="container mx-auto px-6">
                 
                 {/* Main Content: Photo + Text */}
-                <div className="flex flex-col md:flex-row items-center justify-center gap-12 md:gap-16">
+                <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-12">
                     {/* Photo */}
                     <div className="md:w-1/3 flex-shrink-0">
                          <div className="relative group rounded-lg shadow-2xl mx-auto md:mx-0 w-60 h-60 md:w-64 md:h-64 lg:w-72 lg:h-72 border-8 border-[var(--color-surface)] ring-4 ring-[var(--color-primary)] transition-all duration-500 ease-in-out hover:ring-offset-4 hover:ring-offset-[var(--color-background)] hover:shadow-[0_0_45px_var(--color-primary)]/50 overflow-hidden">
@@ -74,7 +74,7 @@ const About = forwardRef<HTMLElement, AboutProps>(({ onStatClick }, ref) => {
                         <div className="absolute -top-16 -right-10 w-24 h-24 z-0 hidden lg:block animate-float" aria-hidden="true">
                            <MiniMascot />
                         </div>
-                        <h2 className="text-4xl md:text-5xl font-playfair font-bold text-[var(--color-primary)] mb-4 uppercase" style={{textShadow: '0 2px 8px var(--color-primary)/40'}}>A sua Mentora nesta Jornada</h2>
+                        <h2 className="text-3xl sm:text-4xl font-playfair font-bold text-[var(--color-primary)] mb-4 uppercase" style={{textShadow: '0 2px 8px var(--color-primary)/40'}}>A sua Mentora nesta Jornada</h2>
                         <p className="text-lg text-[var(--color-text)] leading-relaxed max-w-3xl">
                             Joyci Almeida não é apenas uma especialista, é uma visionária. Com uma metodologia que une técnica impecável, visão de negócio e paixão por elevar a autoestima, ela está pronta para guiar você ao sucesso.
                         </p>
@@ -82,7 +82,7 @@ const About = forwardRef<HTMLElement, AboutProps>(({ onStatClick }, ref) => {
                 </div>
 
                 {/* Stats Section - Moved Below */}
-                <div className="mt-20 md:mt-24 pt-16 border-t border-[var(--color-border)]">
+                <div className="mt-12 md:mt-20 pt-12 border-t border-[var(--color-border)]">
                     <div className="flex flex-row justify-around items-start gap-2 sm:gap-4 text-center max-w-5xl mx-auto">
                       {stats.map((stat, index) => (
                           <button 

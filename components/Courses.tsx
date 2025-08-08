@@ -60,13 +60,13 @@ const Courses = forwardRef<HTMLElement, CoursesProps>(({ courses, featureCategor
   const logoWhatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(logoWhatsappMessage)}`;
 
   return (
-    <section ref={ref} id="cursos" className="pt-12 md:pt-16 pb-20 md:pb-32 bg-[var(--color-surface)]/85 fade-in-section">
+    <section ref={ref} id="cursos" className="py-16 sm:py-20 md:py-28 bg-[var(--color-surface)]/85 fade-in-section">
       <div className="container mx-auto px-6">
-        <div className="text-center mb-16 relative">
+        <div className="text-center mb-12 md:mb-16 relative">
            <div className="absolute -top-12 -left-4 w-24 h-24 z-0 hidden xl:block animate-float opacity-80" style={{animationDelay: '0.5s'}} aria-hidden="true">
              <MiniMascot />
            </div>
-          <h2 className="text-4xl md:text-5xl font-playfair font-bold text-[var(--color-primary)] uppercase" style={{textShadow: '0 2px 8px var(--color-primary)/40'}}>NOSSOS CURSOS</h2>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-playfair font-bold text-[var(--color-primary)] uppercase" style={{textShadow: '0 2px 8px var(--color-primary)/40'}}>NOSSOS CURSOS</h2>
           <p className="text-lg text-[var(--color-text-subtle)] mt-4">Escolha o plano ideal para transformar a sua carreira.</p>
           <p className="text-md font-semibold text-[var(--color-primary)] mt-4 tracking-wider">
               Todos os cursos incluem 2 dias de imersão e kit de material inicial.
@@ -87,7 +87,7 @@ const Courses = forwardRef<HTMLElement, CoursesProps>(({ courses, featureCategor
           </div>
         </div>
 
-        <div className="mt-20 pt-16 border-t border-[var(--color-border)] flex flex-wrap justify-center gap-8">
+        <div className="mt-16 md:mt-20 pt-12 md:pt-16 border-t border-[var(--color-border)] flex flex-wrap justify-center gap-8">
             <div className="bg-[var(--color-surface)] border-2 border-dashed border-[var(--color-primary)] rounded-xl p-8 w-full max-w-lg text-center transform hover:scale-105 transition-transform duration-300 relative overflow-hidden">
                 <div className="absolute -top-10 -right-10 w-32 h-32 text-[var(--color-primary)] opacity-10" aria-hidden="true">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2c5.523 0 10 4.477 10 10s-4.477 10-10 10S2 17.523 2 12 6.477 2 12 2zm0 2a8 8 0 100 16 8 8 0 000-16zm-1 4v3h-3v2h3v3h2v-3h3v-2h-3V8h-2z"></path></svg>
@@ -128,8 +128,8 @@ const Courses = forwardRef<HTMLElement, CoursesProps>(({ courses, featureCategor
             </div>
         </div>
 
-        <div className="text-center mt-20 pt-16 border-t border-[var(--color-border)]">
-            <h3 className="text-4xl md:text-5xl font-playfair font-bold text-[var(--color-primary)] uppercase" style={{textShadow: '0 2px 8px var(--color-primary)/40'}}>PAGAMENTO FACILITADO</h3>
+        <div className="text-center mt-16 md:mt-20 pt-12 md:pt-16 border-t border-[var(--color-border)]">
+            <h3 className="text-3xl sm:text-4xl md:text-5xl font-playfair font-bold text-[var(--color-primary)] uppercase" style={{textShadow: '0 2px 8px var(--color-primary)/40'}}>PAGAMENTO FACILITADO</h3>
             <p className="text-lg text-[var(--color-text-subtle)] mt-4 max-w-2xl mx-auto">Aceitamos diversas formas de pagamento para sua comodidade. Escolha a que melhor se adapta a você.</p>
             
             <div className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 max-w-4xl mx-auto">
