@@ -1,5 +1,6 @@
 
 
+
 import React, { useRef, useEffect, useMemo, useState } from 'react';
 import { SectionRefs, Course, InfoModalData } from './types';
 import Header from './components/Header';
@@ -10,13 +11,11 @@ import Footer from './components/Footer';
 import WinkingLashes from './components/WinkingLashes';
 import FloatingWhatsApp from './components/FloatingWhatsApp';
 import Modal from './components/Modal';
-import TopBar from './components/TopBar';
 import GlobalMouseGlow from './components/GlobalMouseGlow';
 import InfoModal from './components/InfoModal';
 import Mascot from './components/Mascot';
 import Contact from './components/Contact';
 import ClickEffect from './components/ClickEffect';
-import { MenuIcon } from './components/icons/MenuIcon';
 
 // --- Inlined Helper Icons for Navigation (to avoid new files) ---
 
@@ -92,19 +91,6 @@ const NavModal = ({ isOpen, onClose, scrollToSection, navLinks }: NavModalProps)
         </div>
     );
 };
-
-// --- New Floating Menu Button ---
-const FloatingMenuButton = ({ onClick }: { onClick: () => void }) => (
-    <div className="fixed top-6 left-6 z-[55]">
-        <button
-            onClick={onClick}
-            className="relative w-14 h-14 bg-[var(--color-surface)]/90 backdrop-blur-sm rounded-full shadow-lg flex items-center justify-center text-[var(--color-text-strong)] hover:text-[var(--color-primary)] transition-all duration-300 hover:scale-110 animate-fade-in-down"
-            aria-label="Abrir menu de navegação"
-        >
-            <MenuIcon className="w-7 h-7" />
-        </button>
-    </div>
-);
 
 
 const featureCategories = {
@@ -245,7 +231,7 @@ const App = () => {
 
     useEffect(() => {
         const handleScroll = () => {
-            setIsScrolled(window.scrollY > 200);
+            setIsScrolled(window.scrollY > 10);
         };
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
@@ -327,7 +313,6 @@ const App = () => {
             <ClickEffect />
             <GlobalMouseGlow />
             <div className='relative z-50'>
-              <TopBar />
               <Header 
                 scrollToSection={scrollToSection} 
                 onMenuClick={() => setIsNavModalOpen(!isNavModalOpen)} 
@@ -335,8 +320,6 @@ const App = () => {
                 isScrolled={isScrolled}
               />
             </div>
-
-            {isScrolled && !isNavModalOpen && <FloatingMenuButton onClick={() => setIsNavModalOpen(true)} />}
 
             <WinkingLashes />
             

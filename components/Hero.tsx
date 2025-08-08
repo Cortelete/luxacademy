@@ -38,7 +38,7 @@ const Hero = forwardRef<HTMLElement, HeroProps>(({ scrollToSection }, ref) => {
                 >
                    {titleText}
                 </h1>
-                <h2 className="mt-4 text-3xl sm:text-4xl md:text-5xl font-playfair font-bold hero-subtitle uppercase">
+                <h2 className="mt-4 text-2xl sm:text-3xl md:text-4xl font-playfair font-bold hero-subtitle uppercase">
                     Conquiste sua Independência.
                 </h2>
                 <button

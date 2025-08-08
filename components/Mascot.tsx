@@ -160,15 +160,18 @@ const Mascot: React.FC = () => {
             aria-label="Mascote Interativa Luxy, a assistente virtual"
         >
             {speech && (
-                 <div className="absolute bottom-full mb-4 left-full ml-4 w-max max-w-[160px] sm:max-w-[220px] p-0.5 rounded-xl shadow-2xl animate-bubble-pop-in-right bg-gradient-to-br from-[var(--color-primary)] to-[#d8b26b]" style={{ transformOrigin: 'bottom left' }}>
+                 <div className="absolute bottom-full mb-2 left-full ml-2 w-max max-w-[160px] sm:max-w-[220px] p-0.5 rounded-xl shadow-2xl animate-bubble-pop-in-right bg-gradient-to-br from-[var(--color-primary)] to-[#d8b26b]" style={{ transformOrigin: 'bottom left' }}>
                     <div className="relative bg-gradient-to-br from-[var(--color-surface)] to-[var(--color-background)] rounded-lg px-3 sm:px-4 py-2 sm:py-3">
                         <strong className="block text-xs sm:text-sm font-bold text-[var(--color-text-strong)] mb-1">Dica da Luxy ✨</strong>
                         <p className="text-[13px] sm:text-[15px] text-[var(--color-primary)] font-medium leading-tight">{speech}</p>
                         {/* Triangle Pointer */}
-                        <div className="absolute top-1/2 -translate-y-1/2 right-full w-0 h-0 
-                                      border-r-[8px] border-r-[var(--color-surface)]
-                                      border-t-[8px] border-t-transparent
-                                      border-b-[8px] border-b-transparent"></div>
+                        <div
+                            className="absolute top-1/2 right-full w-0 h-0 
+                                       border-r-[8px] border-r-[var(--color-surface)]
+                                       border-t-[8px] border-t-transparent
+                                       border-b-[8px] border-b-transparent"
+                            style={{ transform: 'translateY(-50%) rotate(-45deg)' }}
+                        ></div>
                     </div>
                 </div>
             )}

@@ -35,7 +35,7 @@ const Header = ({ scrollToSection, onMenuClick, isNavOpen, isScrolled }: HeaderP
     };
 
     return (
-        <header className={`sticky top-0 w-full transform transition-all duration-500 ease-in-out z-50 ${isNavOpen ? 'bg-[var(--color-surface)]/90' : 'bg-transparent'} ${isScrolled && !isNavOpen ? '-translate-y-full' : 'translate-y-0'} ${(isScrolled || isNavOpen) && 'bg-[var(--color-surface)]/90 backdrop-blur-sm shadow-lg'}`}>
+        <header className={`sticky top-0 w-full transition-all duration-300 ease-in-out z-50 ${(isScrolled || isNavOpen) ? 'bg-[var(--color-surface)]/90 backdrop-blur-sm shadow-lg' : 'bg-transparent'}`}>
             <div className="container mx-auto px-6 py-4 flex justify-between items-center">
                  <a 
                     href={luxuryInstagramUrl}
