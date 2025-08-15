@@ -4,7 +4,6 @@ import { InfoModalData } from '../types';
 import UsersIcon from './icons/UsersIcon';
 import CertificateIcon from './icons/CertificateIcon';
 import BriefcaseIcon from './icons/BriefcaseIcon';
-import MiniMascot from './MiniMascot';
 import GoldenDustCanvas from './GoldenDustCanvas';
 
 interface AboutProps {
@@ -72,7 +71,7 @@ const About = forwardRef<HTMLElement, AboutProps>(({ onStatClick }, ref) => {
                     {/* Text */}
                     <div className="md:w-2/3 text-center md:text-left relative">
                         <div className="absolute -top-16 -right-10 w-24 h-24 z-0 hidden lg:block animate-float" aria-hidden="true">
-                           <MiniMascot />
+                           <img src="./mascot.png" alt="Mascote Luxy" className="w-full h-full object-contain" />
                         </div>
                         <h2 className="text-3xl sm:text-4xl font-playfair font-bold text-[var(--color-primary)] mb-4 uppercase" style={{textShadow: '0 2px 8px var(--color-primary)/40'}}>A sua Mentora nesta Jornada</h2>
                         <p className="text-lg text-[var(--color-text)] leading-relaxed max-w-3xl">

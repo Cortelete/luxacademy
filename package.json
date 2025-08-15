@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "build": "mkdir -p dist && cp index.html dist/index.html && cp image.png dist/image.png && esbuild index.tsx --bundle --outfile=dist/bundle.js --jsx=automatic --loader:.ts=tsx"
+    "build": "mkdir -p dist && cp index.html dist/index.html && cp image.png dist/image.png && cp mascot.png dist/mascot.png && esbuild index.tsx --bundle --outfile=dist/bundle.js --jsx=automatic --loader:.ts=tsx"
   },
   "dependencies": {
     "@vercel/analytics": "^1.3.1",
