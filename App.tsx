@@ -2,6 +2,7 @@
 
 
 
+
 import React, { useRef, useEffect, useMemo, useState } from 'react';
 import { SectionRefs, Course, InfoModalData } from './types';
 import Header from './components/Header';
@@ -126,7 +127,7 @@ const coursesData: Course[] = [
       price: 'R$ 899', 
       highlight: 'DIRETO AO PONTO',
       includedCategories: ['Plano Profissional'], 
-      includedFeatures: ['Certificado', 'Coffee Break', 'Apostila detalhada', 'Mentoria exclusiva', 'Grupo de WhatsApp geral'],
+      includedFeatures: ['Certificado', 'Apostila detalhada', 'Mentoria exclusiva', 'Grupo de WhatsApp geral'],
       cta: 'QUERO COMEÇAR AGORA', 
       whatsappMessage: 'Olá! Tenho interesse no curso Lash Profissional. Pode dar-me mais informações?',
       difficulty: 'Iniciante',
