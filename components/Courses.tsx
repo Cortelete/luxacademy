@@ -1,5 +1,6 @@
 
 
+
 import React, { forwardRef, useState } from 'react';
 import { Course } from '../types';
 import CourseCard from './CourseCard';
