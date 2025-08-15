@@ -7,7 +7,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@400;500;700&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
     <style>
       /* Dark theme (default) */
       :root {
@@ -77,9 +77,6 @@
       }
       .font-montserrat {
         font-family: 'Montserrat', sans-serif;
-      }
-      .font-great-vibes {
-        font-family: 'Great Vibes', cursive;
       }
       
       /* Custom scrollbar */
@@ -203,44 +200,30 @@
 
       /* Hero Title & Subtitle Interaction Styles */
       .hero-title-golden {
-          background: linear-gradient(120deg, #F0D8A4, #EACD8C, #d8b26b, #EACD8C, #F0D8A4);
+          background: linear-gradient(135deg, #FDF5E6 10%, #EACD8C 50%, #B58A38 90%);
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
           background-clip: text;
           text-fill-color: transparent;
-          background-size: 200% 200%;
-          animation: animated-border 6s ease infinite; /* Kept the subtle gradient animation */
-          /* A subtle, static glow for the initial state */
-          text-shadow: 0 1px 2px rgba(0,0,0,0.6), 0 0 10px rgba(234, 205, 140, 0.4);
-          transition: text-shadow 0.4s ease-out; /* Smooth transition for the glow */
+          background-size: 200% auto;
+          animation: animated-border 10s ease-in-out infinite;
       }
       
       .hero-subtitle {
-          color: #d1d5db; /* Cor de cinza mais clara para melhor legibilidade no fundo escuro. */
-          text-shadow: 0 1px 2px rgba(0,0,0,0.3);
-          transition: text-shadow 0.4s ease-out, color 0.4s ease-out;
+          color: #d1d5db; /* Lighter gray for readability */
+          transition: color 0.4s ease-out;
       }
       
       html.light .hero-subtitle {
-          /* Subtitle color in light mode: gold, to match the title's theme */
           color: var(--color-primary);
-          text-shadow: 0 1px 2px rgba(0,0,0,0.15);
       }
 
       .hero-title-container:hover .hero-subtitle {
-          /* Lighter glow on hover */
-          color: var(--color-primary);
-          text-shadow: 0 1px 3px rgba(0,0,0,0.3),
-                       0 0 6px rgba(255, 248, 220, 0.5),
-                       0 0 18px rgba(234, 205, 140, 0.6);
+          color: #FFFFFF; /* Bright white on hover for dark theme */
       }
 
       html.light .hero-title-container:hover .hero-subtitle {
-          /* The color is already gold, we just enhance the glow */
           color: var(--color-primary);
-          text-shadow: 0 1px 3px rgba(0,0,0,0.2),
-                       0 0 6px rgba(181, 138, 56, 0.5),
-                       0 0 18px rgba(181, 138, 56, 0.6);
       }
 
     </style>
