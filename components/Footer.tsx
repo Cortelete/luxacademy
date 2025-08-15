@@ -1,5 +1,6 @@
 
 
+
 import React from 'react';
 import { SectionRefs } from '../types';
 import InstagramIcon from './icons/InstagramIcon';
@@ -13,7 +14,7 @@ const Footer = ({ scrollToSection }: FooterProps) => {
     const iaInstagramUrl = "https://www.instagram.com/inteligenciarte.ia/";
 
     return (
-        <footer className="bg-[var(--color-background)]/85 text-[var(--color-text-strong)] py-12 border-t border-[var(--color-border)]">
+        <footer className="bg-[var(--color-surface)] text-[var(--color-text-strong)] py-12 border-t border-[var(--color-border)]">
             <div className="container mx-auto px-6 z-10 relative">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
                     {/* Column 1: Brand */}

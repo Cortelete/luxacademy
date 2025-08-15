@@ -43,8 +43,8 @@ const About = forwardRef<HTMLElement, AboutProps>(({ onStatClick }, ref) => {
     };
 
     return (
-        <section ref={ref} id="sobre" className="py-16 sm:py-20 bg-[var(--color-surface)]/85 fade-in-section">
-            <div className="container mx-auto px-6">
+        <section ref={ref} id="sobre" className="px-6 py-8 md:py-12 fade-in-section">
+            <div className="container mx-auto bg-[var(--color-surface)] rounded-2xl p-6 sm:p-10 md:p-12 shadow-2xl border border-[var(--color-border)]">
                 
                 {/* Main Content: Photo + Text */}
                 <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-12">

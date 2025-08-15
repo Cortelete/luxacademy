@@ -2,6 +2,8 @@
 
 
 
+
+
 import React, { forwardRef } from 'react';
 import WhatsAppIcon from './icons/WhatsAppIcon';
 import InstagramIcon from './icons/InstagramIcon';
@@ -18,8 +20,8 @@ const Contact = forwardRef<HTMLElement>((props, ref) => {
     const telLink = `tel:+5542999722042`;
 
     return (
-        <section ref={ref} id="contact" className="py-16 sm:py-20 md:py-28 bg-[var(--color-background)]/85 relative overflow-hidden fade-in-section">
-            <div className="container mx-auto px-6 z-10 relative">
+        <section ref={ref} id="contact" className="px-6 py-8 md:py-12 fade-in-section">
+            <div className="container mx-auto bg-[var(--color-surface)] rounded-2xl p-6 sm:p-10 md:p-12 shadow-2xl border border-[var(--color-border)] z-10 relative overflow-hidden">
                 <div className="text-center mb-16">
                     <h2 className="text-4xl sm:text-5xl font-playfair font-bold text-[var(--color-primary)] uppercase" style={{textShadow: '0 2px 8px var(--color-primary)/40'}}>Entre em Contato</h2>
                     <p className="mt-4 text-lg md:text-xl text-[var(--color-text)] max-w-3xl mx-auto">
@@ -29,7 +31,7 @@ const Contact = forwardRef<HTMLElement>((props, ref) => {
                 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
                     {/* WhatsApp Card */}
-                    <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="group block bg-gradient-to-br from-[var(--color-surface)] to-[var(--color-background)] p-6 sm:p-8 rounded-2xl border border-[var(--color-border)] shadow-lg hover:shadow-2xl hover:shadow-[#25D366]/20 hover:border-[#25D366]/50 transform hover:-translate-y-2 transition-all duration-300">
+                    <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="group block bg-gradient-to-br from-white/5 to-transparent p-6 sm:p-8 rounded-2xl border border-[var(--color-border)] shadow-lg hover:shadow-2xl hover:shadow-[#25D366]/20 hover:border-[#25D366]/50 transform hover:-translate-y-2 transition-all duration-300">
                         <div className="flex items-center gap-6">
                             <div className="bg-[#25D366] p-4 rounded-full">
                                 <WhatsAppIcon className="w-10 h-10 text-white" />
@@ -42,7 +44,7 @@ const Contact = forwardRef<HTMLElement>((props, ref) => {
                     </a>
                     
                     {/* Instagram Card */}
-                    <a href={instagramUrl} target="_blank" rel="noopener noreferrer" className="group block bg-gradient-to-br from-[var(--color-surface)] to-[var(--color-background)] p-6 sm:p-8 rounded-2xl border border-[var(--color-border)] shadow-lg hover:shadow-2xl hover:shadow-[#E1306C]/20 hover:border-[#E1306C]/50 transform hover:-translate-y-2 transition-all duration-300">
+                    <a href={instagramUrl} target="_blank" rel="noopener noreferrer" className="group block bg-gradient-to-br from-white/5 to-transparent p-6 sm:p-8 rounded-2xl border border-[var(--color-border)] shadow-lg hover:shadow-2xl hover:shadow-[#E1306C]/20 hover:border-[#E1306C]/50 transform hover:-translate-y-2 transition-all duration-300">
                         <div className="flex items-center gap-6">
                             <div className="bg-gradient-to-br from-[#833ab4] via-[#fd1d1d] to-[#fcb045] p-4 rounded-full">
                                 <InstagramIcon className="w-10 h-10 text-white" />
@@ -61,7 +63,7 @@ const Contact = forwardRef<HTMLElement>((props, ref) => {
                         href={googleMapsUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="group block bg-[var(--color-surface)] p-6 rounded-2xl border border-[var(--color-border)] hover:border-[var(--color-primary)]/50 transform hover:-translate-y-1 transition-all duration-300 shadow-lg hover:shadow-[var(--color-primary)]/10"
+                        className="group block bg-[var(--color-background)] p-6 rounded-2xl border border-[var(--color-border)] hover:border-[var(--color-primary)]/50 transform hover:-translate-y-1 transition-all duration-300 shadow-lg hover:shadow-[var(--color-primary)]/10"
                     >
                         <div className="flex flex-col sm:flex-row items-center gap-5 text-center sm:text-left">
                             <MapPinIcon className="w-12 h-12 text-[var(--color-primary)] flex-shrink-0" />
@@ -76,7 +78,7 @@ const Contact = forwardRef<HTMLElement>((props, ref) => {
                             </span>
                         </div>
                     </a>
-                     <a href={telLink} className="group mt-6 inline-flex items-center justify-center gap-3 max-w-full mx-auto px-6 py-3 bg-[var(--color-surface)] text-[var(--color-primary)] border border-[var(--color-border)] rounded-full shadow-lg transform hover:-translate-y-1 hover:border-[var(--color-primary)]/50 transition-all duration-300 ease-in-out">
+                     <a href={telLink} className="group mt-6 inline-flex items-center justify-center gap-3 max-w-full mx-auto px-6 py-3 bg-[var(--color-background)] text-[var(--color-primary)] border border-[var(--color-border)] rounded-full shadow-lg transform hover:-translate-y-1 hover:border-[var(--color-primary)]/50 transition-all duration-300 ease-in-out">
                         <PhoneIcon className="w-5 h-5" />
                         <span className="font-semibold text-base md:text-lg">Ligar Agora: {phone}</span>
                     </a>
