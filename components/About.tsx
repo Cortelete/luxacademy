@@ -1,5 +1,5 @@
 
-import React, { forwardRef } from 'react';
+import React, { forwardRef, useState } from 'react';
 import { InfoModalData } from '../types';
 import UsersIcon from './icons/UsersIcon';
 import CertificateIcon from './icons/CertificateIcon';
@@ -11,6 +11,7 @@ interface AboutProps {
 }
 
 const About = forwardRef<HTMLElement, AboutProps>(({ onStatClick }, ref) => {
+    const [isBioExpanded, setIsBioExpanded] = useState(false);
     
     const stats = [
         {
@@ -73,10 +74,16 @@ const About = forwardRef<HTMLElement, AboutProps>(({ onStatClick }, ref) => {
                         <div className="absolute -top-16 -right-10 w-24 h-24 z-10 hidden md:block animate-float" aria-hidden="true">
                            <img src="/mascot.png" alt="Mascote Luxy" className="w-full h-full object-contain" />
                         </div>
-                        <h2 className="text-3xl sm:text-4xl font-playfair font-bold text-[var(--color-primary)] mb-4 uppercase" style={{textShadow: '0 2px 8px var(--color-primary)/40'}}>A sua Mentora nesta Jornada</h2>
-                        <p className="text-lg text-[var(--color-text)] leading-relaxed max-w-3xl">
+                        <h2 className="text-2xl sm:text-3xl md:text-4xl font-playfair font-bold text-[var(--color-primary)] mb-4 uppercase" style={{textShadow: '0 2px 8px var(--color-primary)/40'}}>A sua Mentora nesta Jornada</h2>
+                        <p className={`text-lg text-[var(--color-text)] leading-relaxed max-w-3xl md:block ${isBioExpanded ? 'block' : 'hidden'}`}>
                             Joyci Almeida não é apenas uma especialista, é uma visionária. Com uma metodologia que une técnica impecável, visão de negócio e paixão por elevar a autoestima, ela está pronta para guiar você ao sucesso.
                         </p>
+                         <button 
+                            onClick={() => setIsBioExpanded(!isBioExpanded)}
+                            className="md:hidden mt-2 text-[var(--color-primary)] font-semibold hover:underline"
+                        >
+                            {isBioExpanded ? 'Ver menos' : 'Ver mais'}
+                        </button>
                     </div>
                 </div>
 

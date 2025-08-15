@@ -4,6 +4,7 @@
 
 
 
+
 import React, { forwardRef, useState } from 'react';
 import { Course } from '../types';
 import CourseCard from './CourseCard';
@@ -69,7 +70,7 @@ const Courses = forwardRef<HTMLElement, CoursesProps>(({ courses, featureCategor
            <div className="absolute -top-12 -left-4 w-24 h-24 z-10 hidden lg:block animate-float opacity-80" style={{animationDelay: '0.5s'}} aria-hidden="true">
              <img src="/mascot.png" alt="Mascote Luxy" className="w-full h-full object-contain" />
            </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-playfair font-bold text-[var(--color-primary)] uppercase" style={{textShadow: '0 2px 8px var(--color-primary)/40'}}>NOSSOS CURSOS</h2>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-playfair font-bold text-[var(--color-primary)] uppercase" style={{textShadow: '0 2px 8px var(--color-primary)/40'}}>NOSSOS CURSOS</h2>
           <p className="text-lg text-[var(--color-text-subtle)] mt-4">Escolha o plano ideal para transformar a sua carreira.</p>
           <p className="text-md font-semibold text-[var(--color-primary)] mt-4 tracking-wider">
               Todos os cursos incluem 2 dias de imersão e kit de material inicial.
@@ -97,7 +98,7 @@ const Courses = forwardRef<HTMLElement, CoursesProps>(({ courses, featureCategor
                 </div>
                 <div className="relative z-10">
                     <span className="bg-[var(--color-primary)] text-[var(--color-primary-contrast)] px-4 py-1.5 rounded-full text-sm font-bold shadow-md">ADICIONAL EXCLUSIVO</span>
-                    <h3 className="text-3xl font-playfair font-bold text-[var(--color-text-strong)] mt-5">Criação de Logotipo</h3>
+                    <h3 className="text-2xl sm:text-3xl font-playfair font-bold text-[var(--color-text-strong)] mt-5">Criação de Logotipo</h3>
                     <p className="text-[var(--color-text)] mt-2 mb-4">Dê uma cara profissional à sua marca com um logotipo exclusivo, criado pela InteligenciArte.IA.</p>
                     <p className="text-4xl font-bold text-[var(--color-primary)] my-4">R$ 150</p>
                     <p className="text-sm text-[var(--color-text-subtle)] mb-6">Pode ser adicionado aos planos Profissional ou Empreendedora.</p>
@@ -117,7 +118,7 @@ const Courses = forwardRef<HTMLElement, CoursesProps>(({ courses, featureCategor
                 </div>
                 <div className="relative z-10">
                     <span className="bg-[var(--color-primary)] text-[var(--color-primary-contrast)] px-4 py-1.5 rounded-full text-sm font-bold shadow-md">FLEXIBILIDADE TOTAL</span>
-                    <h3 className="text-3xl font-playfair font-bold text-[var(--color-text-strong)] mt-5">Curso Personalizado</h3>
+                    <h3 className="text-2xl sm:text-3xl font-playfair font-bold text-[var(--color-text-strong)] mt-5">Curso Personalizado</h3>
                     <p className="text-[var(--color-text)] mt-2 mb-4">Já é profissional ou tem necessidades específicas? Monte um plano de estudos exclusivo para você.</p>
                     <p className="text-4xl font-bold text-[var(--color-primary)] my-4">Sob Consulta</p>
                     <p className="text-sm text-[var(--color-text-subtle)] mb-6">Sua jornada, suas regras. Foco total no seu desenvolvimento.</p>
