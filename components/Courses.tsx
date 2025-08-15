@@ -65,7 +65,7 @@ const Courses = forwardRef<HTMLElement, CoursesProps>(({ courses, featureCategor
       <div className="container mx-auto px-6">
         <div className="text-center mb-12 md:mb-16 relative">
            <div className="absolute -top-12 -left-4 w-24 h-24 z-10 hidden lg:block animate-float opacity-80" style={{animationDelay: '0.5s'}} aria-hidden="true">
-             <img src="/mascote.png" alt="Mascote Luxy" className="w-full h-full object-contain" />
+             <img src="/mascot.png" alt="Mascote Luxy" className="w-full h-full object-contain" />
            </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-playfair font-bold text-[var(--color-primary)] uppercase" style={{textShadow: '0 2px 8px var(--color-primary)/40'}}>NOSSOS CURSOS</h2>
           <p className="text-lg text-[var(--color-text-subtle)] mt-4">Escolha o plano ideal para transformar a sua carreira.</p>
