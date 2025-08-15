@@ -53,7 +53,7 @@ const About = forwardRef<HTMLElement, AboutProps>(({ onStatClick }, ref) => {
                          <div className="relative group rounded-lg shadow-2xl mx-auto md:mx-0 w-60 h-60 md:w-64 md:h-64 lg:w-72 lg:h-72 border-8 border-[var(--color-surface)] ring-4 ring-[var(--color-primary)] transition-all duration-500 ease-in-out hover:ring-offset-4 hover:ring-offset-[var(--color-background)] hover:shadow-[0_0_45px_var(--color-primary)]/50 overflow-hidden">
                             <GoldenDustCanvas />
                             <img 
-                                src="./image.png"
+                                src="/image.png"
                                 alt="Joyci Almeida" 
                                 className="relative z-10 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                             />
@@ -71,7 +71,7 @@ const About = forwardRef<HTMLElement, AboutProps>(({ onStatClick }, ref) => {
                     {/* Text */}
                     <div className="md:w-2/3 text-center md:text-left relative">
                         <div className="absolute -top-16 -right-10 w-24 h-24 z-0 hidden lg:block animate-float" aria-hidden="true">
-                           <img src="./mascot.png" alt="Mascote Luxy" className="w-full h-full object-contain" />
+                           <img src="/mascot.png" alt="Mascote Luxy" className="w-full h-full object-contain" />
                         </div>
                         <h2 className="text-3xl sm:text-4xl font-playfair font-bold text-[var(--color-primary)] mb-4 uppercase" style={{textShadow: '0 2px 8px var(--color-primary)/40'}}>A sua Mentora nesta Jornada</h2>
                         <p className="text-lg text-[var(--color-text)] leading-relaxed max-w-3xl">
