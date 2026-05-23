@@ -1,6 +1,4 @@
-import express from 'express';
-import path from 'path';
-import { createServer as createViteServer } from 'vite';
+import { VercelRequest, VercelResponse } from '@vercel/node';
 import { GoogleGenAI, Chat } from '@google/genai';
 
 const coursesData = [
@@ -55,71 +53,46 @@ const systemInstruction = `Você é 'Luxy', a assistente virtual da Luxury Studi
     5. Se perguntarem como se inscrever, instrua a pessoa a clicar no botão de CTA do curso desejado na página ou a entrar em contato pelo WhatsApp.
     6. Mantenha as respostas concisas e fáceis de ler. Se a primeira mensagem for 'Olá', responda com a sua saudação inicial.`;
 
-async function startServer() {
-  const app = express();
-  const PORT = 3000;
-
-  app.use(express.json());
-
-  app.post('/api/chat', async (req, res) => {
-    console.log('Chat API endpoint hit.');
+export default async function handler(req: VercelRequest, res: VercelResponse) {
+    if (req.method !== 'POST') {
+        res.status(405).json({ error: 'Method Not Allowed' });
+        return;
+    }
 
     if (!process.env.API_KEY && !process.env.GEMINI_API_KEY) {
-      console.error('API_KEY not found in environment variables.');
-      res.status(500).json({ error: 'Internal Server Error', details: 'Server is missing API Key configuration.' });
-      return;
+        console.error('API_KEY not found in environment variables.');
+        res.status(500).json({ error: 'Internal Server Error', details: 'Server is missing API Key configuration.' });
+        return;
     }
     const apiKey = process.env.API_KEY || process.env.GEMINI_API_KEY;
 
     try {
-      const { message, history } = req.body;
-      
-      if (!message) {
-        res.status(400).json({ error: 'Message is required' });
-        return;
-      }
-      
-      const ai = new GoogleGenAI({ apiKey });
+        const { message, history } = req.body;
+        
+        if (!message) {
+            res.status(400).json({ error: 'Message is required' });
+            return;
+        }
+        
+        const ai = new GoogleGenAI({ apiKey });
 
-      const chat: Chat = ai.chats.create({
-        model: 'gemini-2.5-flash',
-        config: {
-          systemInstruction: systemInstruction,
-        },
-        history: history || [], 
-      });
-      
-      const response = await chat.sendMessage({ message });
+        const chat: Chat = ai.chats.create({
+            model: 'gemini-2.5-flash',
+            config: {
+                systemInstruction: systemInstruction,
+            },
+            history: history || [], 
+        });
+        
+        const response = await chat.sendMessage({ message });
 
-      res.status(200).json({ 
-          text: response.text,
-          history: await chat.getHistory() 
-      });
+        res.status(200).json({ 
+            text: response.text,
+            history: await chat.getHistory() 
+        });
 
     } catch (error: any) {
-      console.error('Error in Gemini API Call:', error.message);
-      res.status(500).json({ error: 'Internal Server Error', details: error.message });
+        console.error('Error in Gemini API Call:', error.message);
+        res.status(500).json({ error: 'Internal Server Error', details: error.message });
     }
-  });
-
-  if (process.env.NODE_ENV !== 'production') {
-    const vite = await createViteServer({
-      server: { middlewareMode: true },
-      appType: 'spa',
-    });
-    app.use(vite.middlewares);
-  } else {
-    const distPath = path.join(process.cwd(), 'dist');
-    app.use(express.static(distPath));
-    // Fallback para Express v5
-    app.get('*all', (req, res) => {
-      res.sendFile(path.join(distPath, 'index.html'));
-    });
-  }
-
-  app.listen(PORT, '0.0.0.0', () => {
-    console.log(`Server running on port ${PORT}`);
-  });
 }
-
-startServer();
