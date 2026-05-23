@@ -1,7 +1,8 @@
+import express from 'express';
+import path from 'path';
+import { createServer as createViteServer } from 'vite';
 import { GoogleGenAI, Chat } from '@google/genai';
-import type { VercelRequest, VercelResponse } from '@vercel/node';
 
-// As informações dos cursos são movidas para o backend para construir o system prompt
 const coursesData = [
     { 
       id: 1, 
@@ -54,60 +55,71 @@ const systemInstruction = `Você é 'Luxy', a assistente virtual da Luxury Studi
     5. Se perguntarem como se inscrever, instrua a pessoa a clicar no botão de CTA do curso desejado na página ou a entrar em contato pelo WhatsApp.
     6. Mantenha as respostas concisas e fáceis de ler. Se a primeira mensagem for 'Olá', responda com a sua saudação inicial.`;
 
-export default async function handler(
-  req: VercelRequest,
-  res: VercelResponse
-) {
-  // --- Enhanced Error Handling & Logging ---
-  console.log('Chat API endpoint hit.');
+async function startServer() {
+  const app = express();
+  const PORT = 3000;
 
-  if (req.method !== 'POST') {
-    console.log(`Method ${req.method} not allowed.`);
-    return res.status(405).json({ error: 'Method Not Allowed' });
-  }
+  app.use(express.json());
 
-  // 1. Explicitly check for API Key with the correct name
-  if (!process.env.API_KEY) {
-    console.error('API_KEY not found in environment variables.');
-    return res.status(500).json({ error: 'Internal Server Error', details: 'Server is missing API Key configuration.' });
-  }
-  console.log('API_KEY found.');
+  app.post('/api/chat', async (req, res) => {
+    console.log('Chat API endpoint hit.');
 
-  try {
-    const { message, history } = req.body;
-    console.log('Received message:', message);
-    console.log('Received history length:', history?.length || 0);
-
-    if (!message) {
-      console.log('Validation failed: Message is required.');
-      return res.status(400).json({ error: 'Message is required' });
+    if (!process.env.API_KEY && !process.env.GEMINI_API_KEY) {
+      console.error('API_KEY not found in environment variables.');
+      res.status(500).json({ error: 'Internal Server Error', details: 'Server is missing API Key configuration.' });
+      return;
     }
-    
-    // Initialize AI client inside the try block after checks
-    const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+    const apiKey = process.env.API_KEY || process.env.GEMINI_API_KEY;
 
-    const chat: Chat = ai.chats.create({
-      model: 'gemini-2.5-flash',
-      config: {
-        systemInstruction: systemInstruction,
-      },
-      history: history || [], 
+    try {
+      const { message, history } = req.body;
+      
+      if (!message) {
+        res.status(400).json({ error: 'Message is required' });
+        return;
+      }
+      
+      const ai = new GoogleGenAI({ apiKey });
+
+      const chat: Chat = ai.chats.create({
+        model: 'gemini-2.5-flash',
+        config: {
+          systemInstruction: systemInstruction,
+        },
+        history: history || [], 
+      });
+      
+      const response = await chat.sendMessage({ message });
+
+      res.status(200).json({ 
+          text: response.text,
+          history: await chat.getHistory() 
+      });
+
+    } catch (error: any) {
+      console.error('Error in Gemini API Call:', error.message);
+      res.status(500).json({ error: 'Internal Server Error', details: error.message });
+    }
+  });
+
+  if (process.env.NODE_ENV !== 'production') {
+    const vite = await createViteServer({
+      server: { middlewareMode: true },
+      appType: 'spa',
     });
-    
-    console.log('Sending message to Gemini...');
-    const response = await chat.sendMessage({ message });
-    console.log('Received response from Gemini.');
-
-    res.status(200).json({ 
-        text: response.text,
-        history: await chat.getHistory() 
+    app.use(vite.middlewares);
+  } else {
+    const distPath = path.join(process.cwd(), 'dist');
+    app.use(express.static(distPath));
+    // Fallback para Express v5
+    app.get('*all', (req, res) => {
+      res.sendFile(path.join(distPath, 'index.html'));
     });
-
-  } catch (error: any) {
-    console.error('--- ERROR IN GEMINI API CALL ---');
-    console.error('Error message:', error.message);
-    console.error('Full error object:', error);
-    console.error('--- END OF ERROR ---');
-    res.status(500).json({ error: 'Internal Server Error', details: error.message });
   }
+
+  app.listen(PORT, '0.0.0.0', () => {
+    console.log(`Server running on port ${PORT}`);
+  });
 }
+
+startServer();
