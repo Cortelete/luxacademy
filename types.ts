@@ -13,6 +13,7 @@ export interface Course {
     whatsappMessage: string;
     includedCategories: string[];
     includedFeatures?: string[];
+    summaryFeatures?: string[];
     modalPhrases: string[];
     difficulty: string;
     focus: string;

@@ -36,7 +36,7 @@ const Courses = forwardRef<HTMLElement, CoursesProps>(({ courses, featureCategor
         </div>
         
         {/* Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-start">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">
             {courses.map(course => (
                 <CourseCard 
                   key={course.id} 

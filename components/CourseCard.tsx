@@ -19,6 +19,10 @@ const CourseCard: React.FC<CourseCardProps> = ({ course, featureCategories, onCt
     
     // Determine features to show based on course type
     const featuresToShow = () => {
+        if (course.summaryFeatures && course.summaryFeatures.length > 0) {
+            return course.summaryFeatures;
+        }
+
         const allFeatures: string[] = [];
         
         // Simple mapping for display
@@ -32,7 +36,7 @@ const CourseCard: React.FC<CourseCardProps> = ({ course, featureCategories, onCt
         }
         if (course.includedCategories.includes('Exclusivo VIP')) {
             allFeatures.push('Mentoria Individual VIP');
-            allFeatures.push('Acesso à Inteligência Artificial');
+            allFeatures.push('Lash Lifting');
         }
         // Add common stuff
         allFeatures.push('Certificado Reconhecido');

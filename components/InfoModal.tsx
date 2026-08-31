@@ -13,12 +13,29 @@ interface InfoModalProps {
 }
 
 const InfoModal = ({ isOpen, onClose, data }: InfoModalProps) => {
+    const [name, setName] = React.useState('');
+
+    // Reset name when modal closes or opens
+    React.useEffect(() => {
+        if (!isOpen) {
+            setName('');
+        }
+    }, [isOpen]);
+
     if (!isOpen || !data) return null;
     
     const WHATSAPP_NUMBER = '5542999722042';
-    const customQuoteMessage = `Olá! Gostaria de montar um plano de estudos personalizado. Podemos conversar sobre as opções?`;
+    const customQuoteMessage = name.trim() 
+        ? `Olá! Meu nome é ${name.trim()}. Gostaria de montar um plano de estudos personalizado. Podemos conversar sobre as opções?`
+        : `Olá! Gostaria de montar um plano de estudos personalizado. Podemos conversar sobre as opções?`;
     const whatsappCustomQuoteUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(customQuoteMessage)}`;
 
+    const handleQuoteClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+        if (!name.trim()) {
+            e.preventDefault();
+            alert("Por favor, preencha o seu nome antes de pedir o orçamento.");
+        }
+    };
 
     let content;
     switch (data.type) {
@@ -67,16 +84,32 @@ const InfoModal = ({ isOpen, onClose, data }: InfoModalProps) => {
             content = (
                 <>
                     <div dangerouslySetInnerHTML={{ __html: data.hook }} />
-                    <div className="mt-8 pt-6 border-t border-[var(--color-border)] text-center animate-fade-in-up" style={{ animationDelay: '400ms' }}>
-                         <a
-                            href={whatsappCustomQuoteUrl}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="inline-flex items-center justify-center gap-3 w-full sm:w-auto px-8 py-3 bg-[var(--color-background)] text-[var(--color-primary)] border-2 border-[var(--color-primary)]/50 font-bold text-base rounded-full shadow-lg transform hover:scale-105 hover:border-[var(--color-primary)] transition-all duration-300 ease-in-out"
-                        >
-                            <WhatsAppIcon className="w-6 h-6" />
-                            Pedir Orçamento Personalizado
-                        </a>
+                    <div className="mt-8 pt-6 border-t border-[var(--color-border)] text-left animate-fade-in-up" style={{ animationDelay: '400ms' }}>
+                        <div className="mb-4">
+                            <label htmlFor="custom-course-name" className="block text-sm font-medium text-[var(--color-text-strong)] mb-2">
+                                Qual é o seu nome?
+                            </label>
+                            <input
+                                type="text"
+                                id="custom-course-name"
+                                value={name}
+                                onChange={(e) => setName(e.target.value)}
+                                placeholder="Digite seu nome"
+                                className="w-full px-4 py-3 rounded-lg border border-[var(--color-border)] bg-[var(--color-surface)] text-[var(--color-text)] focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)] transition-all"
+                            />
+                        </div>
+                        <div className="text-center mt-6">
+                            <a
+                                href={whatsappCustomQuoteUrl}
+                                onClick={handleQuoteClick}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center justify-center gap-3 w-full sm:w-auto px-8 py-3 bg-[var(--color-background)] text-[var(--color-primary)] border-2 border-[var(--color-primary)]/50 font-bold text-base rounded-full shadow-lg transform hover:scale-105 hover:border-[var(--color-primary)] transition-all duration-300 ease-in-out"
+                            >
+                                <WhatsAppIcon className="w-6 h-6" />
+                                Pedir Orçamento Personalizado
+                            </a>
+                        </div>
                     </div>
                 </>
             );

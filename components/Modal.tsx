@@ -69,23 +69,24 @@ const Modal = ({ isOpen, onClose, course, randomPhrase, featureCategories }: Mod
                             {Object.entries(featureCategories).map(([category, features]) => {
                                 const isFullCategoryIncluded = course.includedCategories.includes(category);
                                 
+                                const includedFeatures = features.filter(feature => 
+                                    isFullCategoryIncluded || (course.includedFeatures && course.includedFeatures.includes(feature))
+                                );
+
+                                if (includedFeatures.length === 0) {
+                                    return null;
+                                }
+                                
                                 return (
                                     <div key={category}>
                                         <h5 className="font-bold text-base md:text-lg mb-2 text-[var(--color-primary)]">+ {category}</h5>
                                         <ul className="space-y-1.5 text-sm md:text-base">
-                                            {features.map((feature) => {
-                                                const isFeatureIncluded = isFullCategoryIncluded || (course.includedFeatures && course.includedFeatures.includes(feature));
-
-                                                return (
-                                                  <li key={feature} className={`flex items-start ${isFeatureIncluded ? 'text-[var(--color-text)]' : 'text-[var(--color-text-subtle)]/70 line-through'}`}>
-                                                      {isFeatureIncluded 
-                                                          ? <CheckIcon className="w-5 h-5 mr-3 mt-1 text-[var(--color-success)] flex-shrink-0" /> 
-                                                          : <XIcon className="w-5 h-5 mr-3 mt-1 text-[var(--color-danger)] flex-shrink-0" />
-                                                      }
-                                                      <span>{feature}</span>
-                                                  </li>
-                                                );
-                                            })}
+                                            {includedFeatures.map((feature) => (
+                                                <li key={feature} className="flex items-start text-[var(--color-text)]">
+                                                    <CheckIcon className="w-5 h-5 mr-3 mt-1 text-[var(--color-success)] flex-shrink-0" /> 
+                                                    <span>{feature}</span>
+                                                </li>
+                                            ))}
                                         </ul>
                                     </div>
                                 )
