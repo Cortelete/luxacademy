@@ -437,7 +437,7 @@ const App = () => {
                     }
                 });
             },
-            { threshold: 0.1 }
+            { threshold: 0.0, rootMargin: '50px' }
         );
 
         const refsToObserve = Object.values(sectionRefs) as React.RefObject<HTMLElement>[];

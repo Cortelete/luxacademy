@@ -57,7 +57,7 @@ const CourseCard: React.FC<CourseCardProps> = ({ course, featureCategories, onCt
 
             <div className="text-center mb-8 pt-4">
                 <h3 className="font-playfair font-bold text-2xl text-[var(--color-text-strong)] mb-2">{course.title}</h3>
-                <p className="text-[var(--color-text-subtle)] text-sm h-10">{course.uniqueDescription}</p>
+                <p className="text-[var(--color-text-subtle)] text-sm min-h-[2.5rem]">{course.uniqueDescription}</p>
             </div>
 
             <div className="text-center mb-8">
