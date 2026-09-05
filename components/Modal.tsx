@@ -48,8 +48,9 @@ const Modal = ({ isOpen, onClose, course, randomPhrase, featureCategories }: Mod
 
                         <div className="text-center">
                             <h2 className="text-xl sm:text-2xl md:text-3xl font-playfair font-bold text-[var(--color-primary)]">{course.title}</h2>
-                            <div className="mt-4 flex justify-center gap-4 text-sm">
+                            <div className="mt-4 flex justify-center items-center gap-4 text-sm flex-wrap">
                                 <span className="bg-[var(--color-tag-bg)] px-3 py-1 rounded-full">Dificuldade: <span className="font-semibold">{course.difficulty}</span></span>
+                                <span className="text-xl sm:text-2xl font-playfair font-bold text-[var(--color-text-strong)]">{course.price}</span>
                             </div>
 
                             <p className="mt-4 sm:mt-6 text-base sm:text-lg md:text-xl italic text-[var(--color-text)] leading-relaxed border-l-4 border-[var(--color-primary)] pl-4 text-left">

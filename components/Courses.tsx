@@ -58,12 +58,22 @@ const Courses = forwardRef<HTMLElement, CoursesProps>(({ courses, featureCategor
                 <p className="text-[var(--color-text)] mb-6 font-light leading-relaxed">
                     Se você já é profissional e busca aperfeiçoamento específico, ou quer focar apenas em gestão, montamos um plano sob medida para você.
                 </p>
-                <button
-                    onClick={onCustomCourseClick}
-                    className="inline-block border-b-2 border-[var(--color-primary)] text-[var(--color-text-strong)] pb-1 hover:text-[var(--color-primary)] transition-colors"
-                >
-                    Solicitar Orçamento Personalizado &rarr;
-                </button>
+                <div className="flex flex-col items-center lg:items-start gap-4">
+                    <button
+                        onClick={onCustomCourseClick}
+                        className="inline-block border-b-2 border-[var(--color-primary)] text-[var(--color-text-strong)] pb-1 hover:text-[var(--color-primary)] transition-colors"
+                    >
+                        Solicitar Orçamento Personalizado &rarr;
+                    </button>
+                    <a
+                        href="https://cursoslux.vercel.app/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-block border-b-2 border-[var(--color-text-subtle)] text-[var(--color-text-subtle)] pb-1 hover:text-[var(--color-primary)] transition-colors"
+                    >
+                        Acessar Ementa dos Cursos &rarr;
+                    </a>
+                </div>
             </div>
 
             {/* Payment Methods */}
