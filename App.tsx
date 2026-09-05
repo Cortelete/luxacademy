@@ -113,10 +113,20 @@ const featureCategories = {
     'Henna com Tintura',
     'Biossegurança e Mapeamento'
   ],
-  'Sobrancelhas - Avançado': [
-    'Módulo 4: Protocolo de Crescimento',
-    'Módulo 5: Brow Repair',
-    'Módulo 6: Brow Lamination'
+  'Módulo 4: Protocolo de Crescimento': [
+    'Protocolo de Crescimento',
+    'Tratamentos Específicos',
+    'Acompanhamento de Resultados'
+  ],
+  'Módulo 5: Brow Repair': [
+    'Técnicas de Brow Repair',
+    'Recuperação de Falhas',
+    'Análise Capilar'
+  ],
+  'Módulo 6: Brow Lamination': [
+    'Técnica de Brow Lamination',
+    'Alinhamento dos Fios',
+    'Nutrição Pós-Química'
   ]
 };
 
@@ -205,7 +215,7 @@ const coursesData: Course[] = [
       uniqueDescription: 'Protocolo de crescimento de sobrancelhas.',
       motivationalPhrase: 'Especialista em recuperação e crescimento.',
       price: 'R$ 700',
-      includedCategories: ['Sobrancelhas - Avançado'], 
+      includedCategories: ['Módulo 4: Protocolo de Crescimento'], 
       includedFeatures: ['Certificado', 'Apostila', 'Mentoria'],
       summaryFeatures: ['Protocolo de Crescimento', 'Tratamentos Específicos', 'Acompanhamento de Resultados', 'Certificado Reconhecido'],
       cta: 'Inscrever-se', 
@@ -220,7 +230,7 @@ const coursesData: Course[] = [
       uniqueDescription: 'Técnicas de reparação e reconstrução de sobrancelhas.',
       motivationalPhrase: 'Restaure a confiança e a beleza.',
       price: 'R$ 800',
-      includedCategories: ['Sobrancelhas - Avançado'], 
+      includedCategories: ['Módulo 5: Brow Repair'], 
       includedFeatures: ['Certificado', 'Apostila', 'Mentoria'],
       summaryFeatures: ['Técnicas de Brow Repair', 'Recuperação de Falhas', 'Análise Capilar', 'Certificado Reconhecido'],
       cta: 'Inscrever-se', 
@@ -235,7 +245,7 @@ const coursesData: Course[] = [
       uniqueDescription: 'Alinhamento e volume para sobrancelhas perfeitas.',
       motivationalPhrase: 'Sobrancelhas encorpadas e modernas.',
       price: 'R$ 800',
-      includedCategories: ['Sobrancelhas - Avançado'], 
+      includedCategories: ['Módulo 6: Brow Lamination'], 
       includedFeatures: ['Certificado', 'Apostila', 'Mentoria'],
       summaryFeatures: ['Técnica de Brow Lamination', 'Alinhamento dos Fios', 'Nutrição Pós-Química', 'Certificado Reconhecido'],
       cta: 'Inscrever-se', 
@@ -299,7 +309,7 @@ const coursesData: Course[] = [
       motivationalPhrase: 'Tendência e naturalidade.',
       price: 'R$ 1400',
       highlight: 'Em Alta',
-      includedCategories: ['Lash Lifting', 'Sobrancelhas - Avançado'], 
+      includedCategories: ['Lash Lifting', 'Módulo 6: Brow Lamination'], 
       includedFeatures: ['Certificados', 'Apostila', 'Mentoria'],
       summaryFeatures: ['Brow Lamination', 'Lash Lifting', 'Elevação e Alinhamento', 'Certificados Reconhecidos'],
       cta: 'Garantir Combo', 
@@ -315,7 +325,7 @@ const coursesData: Course[] = [
       motivationalPhrase: 'Domine a arte das sobrancelhas.',
       price: 'R$ 3000',
       highlight: 'Masterclass',
-      includedCategories: ['Sobrancelhas - Iniciante', 'Sobrancelhas - Avançado'], 
+      includedCategories: ['Sobrancelhas - Iniciante', 'Módulo 4: Protocolo de Crescimento', 'Módulo 5: Brow Repair', 'Módulo 6: Brow Lamination'], 
       includedFeatures: ['Certificação Master', 'Apostila Completa', 'Mentoria', 'Suporte VIP'],
       summaryFeatures: ['Design, Henna e Tintura', 'Protocolo de Crescimento', 'Brow Repair & Lamination', 'Certificação Completa'],
       cta: 'Formação Brow Master', 
@@ -331,7 +341,7 @@ const coursesData: Course[] = [
       motivationalPhrase: 'O topo é o seu lugar.',
       price: 'R$ 5000',
       highlight: 'A Jornada Máxima',
-      includedCategories: ['Técnica Lash', 'Gestão', 'Exclusivo VIP', 'Sobrancelhas - Iniciante', 'Sobrancelhas - Avançado', 'Lash Lifting'], 
+      includedCategories: ['Técnica Lash', 'Gestão', 'Exclusivo VIP', 'Sobrancelhas - Iniciante', 'Módulo 4: Protocolo de Crescimento', 'Módulo 5: Brow Repair', 'Módulo 6: Brow Lamination', 'Lash Lifting'], 
       includedFeatures: ['Todos os Certificados', 'Mentoria VIP', 'Suporte Premium'],
       summaryFeatures: ['Domínio Absoluto em Cílios e Sobrancelhas', 'Mentoria Individual VIP', 'Gestão Estratégica', 'Lash Lifting Completo', 'Certificação Master Completa'],
       cta: 'Aplicar para o Império', 
